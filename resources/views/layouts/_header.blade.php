@@ -15,8 +15,8 @@
       {{-- Right Side of Navbar  --}}
       <ul class="navbar-nav navbar-right">
         {{-- Authentication Links  --}}
-        <li class="nav-item"><a href="#" class="nav-link">登录</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">注册</a></li>
+        <li class="nav-item"><a href='{{ route('login') }}' class='nav-link'>登录</a></li>
+        <li class="nav-item"><a href='{{ route('logout') }}' class='nav-link'>注销</a></li>
       </ul>
 
     </div>
