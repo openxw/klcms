@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="{{ mix('css/app.css') }}  ">
 </head>
 <body>
-  <div id="app" class="{{ route_class() }}-page ">
+  <div id="app" class="{{ route_class() }}-page">
     @include('layouts._header')
 
     <div class="container">
