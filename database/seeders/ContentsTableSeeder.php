@@ -9,7 +9,7 @@ class ContentsTableSeeder extends Seeder
 {
     public function run()
     {
-        Content::factory()->count(10)->create();
+        Content::factory()->count(100)->create();
     }
 }
 

@@ -11,8 +11,14 @@ class ContentFactory extends Factory
 
     public function definition()
     {
+        $sentence = $this->faker->sentence();
+
         return [
-            // $this->faker->name,
+            'title' => $sentence,
+            'body' => $this->faker->text(),
+            'excerpt' => $sentence,
+            'user_id' => $this->faker->randomElement([1, 2, 3]),
+            'category_id' => $this->faker->randomElement([1, 2, 3, 4]),
         ];
     }
 }
