@@ -9,7 +9,12 @@
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       {{-- Left Side Of Navbar  --}}
       <ul class="navbar-nav mr-auto">
-
+        <li class="nav-item {{ active_class(if_route('topics.index')) }}"><a class="nav-link" href="{{ route('contents.index') }}">首页</a></li>
+        @foreach(\App\Models\Category::all() as $cat)
+                <li class="{{ category_nav_active($cat->id) }}">
+                    <a class="nav-link" href="{{ route('categories.show', $cat->id) }}">{{ $cat->name }}</a>
+                </li>
+                @endforeach
       </ul>
 
       {{-- Right Side of Navbar  --}}

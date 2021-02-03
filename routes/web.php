@@ -23,3 +23,5 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 // Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 Route::resource('contents', 'ContentsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+
+Route::resource('categories', 'CategoriesController', ['only' => ['show']]);

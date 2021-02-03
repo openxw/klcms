@@ -7,7 +7,7 @@
             <img class="media-object img-thumbnail mr-3" style="width: 52px; height: 52px;" src="{{ $content->user->avatar }}" title="{{ $content->user->name }}">
           </a> --}}
           <a href="{{ route('contents.show', [$content->id]) }}" title="{{ $content->title }}">
-            <img class="media-object img-thumbnail mr-3" style="width: 220px; height: 220px;" src="{{ $content->title_img }}" title="{{ $content->user->name }}">
+            <img class="media-object img-thumbnail mr-3" style="width: 200px; height: 200px;" src="{{ $content->title_img }}" title="{{ $content->user->name }}">
           </a>
         </div>
 
@@ -24,7 +24,7 @@
 
           <small class="media-body meta text-secondary">
 
-            <a class="text-secondary" href="#" title="{{ $content->category->name }}">
+            <a class="text-secondary" href='{{ route('categories.show', $content->category_id) }}'  title="{{ $content->category->name }}">
               <i class="far fa-folder"></i>
               {{ $content->category->name }}
             </a>
