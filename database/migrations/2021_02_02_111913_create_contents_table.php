@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContentsTable extends Migration 
+class CreateContentsTable extends Migration
 {
 	public function up()
 	{
@@ -20,6 +20,7 @@ class CreateContentsTable extends Migration
             $table->integer('order')->unsigned()->default(0);
             $table->text('excerpt')->nullable();
             $table->string('slug')->nullable();
+            $table->text('title_img');
             $table->timestamps();
         });
 	}

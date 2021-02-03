@@ -6,6 +6,9 @@
           {{-- <a href="{{ route('users.show', [$content->user_id]) }}">
             <img class="media-object img-thumbnail mr-3" style="width: 52px; height: 52px;" src="{{ $content->user->avatar }}" title="{{ $content->user->name }}">
           </a> --}}
+          <a href="{{ route('contents.show', [$content->id]) }}" title="{{ $content->title }}">
+            <img class="media-object img-thumbnail mr-3" style="width: 220px; height: 220px;" src="{{ $content->title_img }}" title="{{ $content->user->name }}">
+          </a>
         </div>
 
         <div class="media-body">

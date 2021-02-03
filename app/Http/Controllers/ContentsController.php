@@ -16,7 +16,7 @@ class ContentsController extends Controller
 
 	public function index()
 	{
-		$contents = Content::paginate();
+		$contents = Content::with('user', 'category')->paginate(10);
 		return view('contents.index', compact('contents'));
 	}
 
