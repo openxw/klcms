@@ -9,13 +9,8 @@ use App\Models\Content;
 
 class ContentObserver
 {
-    public function creating(Content $content)
+    public function saving(Content $content)
     {
-        //
-    }
-
-    public function updating(Content $content)
-    {
-        //
+        $content->excerpt = make_excerpt($content->body);
     }
 }

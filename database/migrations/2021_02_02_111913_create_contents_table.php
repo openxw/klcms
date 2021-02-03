@@ -20,7 +20,7 @@ class CreateContentsTable extends Migration
             $table->integer('order')->unsigned()->default(0);
             $table->text('excerpt')->nullable();
             $table->string('slug')->nullable();
-            $table->text('title_img');
+            $table->text('title_img')->nullable();
             $table->timestamps();
         });
 	}

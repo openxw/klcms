@@ -11,10 +11,10 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item {{ active_class(if_route('topics.index')) }}"><a class="nav-link" href="{{ route('contents.index') }}">首页</a></li>
         @foreach(\App\Models\Category::all() as $cat)
-                <li class="{{ category_nav_active($cat->id) }}">
-                    <a class="nav-link" href="{{ route('categories.show', $cat->id) }}">{{ $cat->name }}</a>
-                </li>
-                @endforeach
+            <li class="{{ category_nav_active($cat->id) }}">
+                <a class="nav-link" href="{{ route('categories.show', $cat->id) }}">{{ $cat->name }}</a>
+            </li>
+        @endforeach
       </ul>
 
       {{-- Right Side of Navbar  --}}
@@ -25,6 +25,12 @@
         {{-- <li class="nav-item"><a href='{{ route('register') }}' class='nav-link'>注册</a></li> --}}
       </ul>
         @else
+        <li class="nav-item">
+          <a class="nav-link mt-1 mr-3 font-weight-bold" href="{{ route('contents.create') }}">
+            <i class="fa fa-plus"></i>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <img src="https://cdn.learnku.com/uploads/images/201709/20/1/PtDKbASVcz.png?imageView2/1/w/60/h/60" class="img-responsive img-circle" width="30px" height="30px">

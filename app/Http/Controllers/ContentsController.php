@@ -6,6 +6,8 @@ use App\Models\Content;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContentRequest;
+use App\Models\Category;
+use Auth;
 
 class ContentsController extends Controller
 {
@@ -27,13 +29,17 @@ class ContentsController extends Controller
 
 	public function create(Content $content)
 	{
-		return view('contents.create_and_edit', compact('content'));
+        $categories = Category::all();
+		return view('contents.create_and_edit', compact('content', 'categories'));
 	}
 
-	public function store(ContentRequest $request)
+	public function store(ContentRequest $request, Content $content)
 	{
-		$content = Content::create($request->all());
-		return redirect()->route('contents.show', $content->id)->with('message', 'Created successfully.');
+        $content -> fill($request->all());
+        $content -> user_id = Auth::id();
+        $content -> save();
+
+		return redirect()->route('contents.show', $content->id)->with('success', '文章创建成功! ');
 	}
 
 	public function edit(Content $content)

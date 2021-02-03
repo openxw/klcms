@@ -36,14 +36,20 @@ class LoginController extends Controller
             return redirect('login')
                         ->withErrors($validator)
                         ->withInput();
-        }
+        };
 
         $credentials = $request->only('email', 'password',);
 
         if (Auth::attempt($credentials)) {
             // 通过认证..
             return redirect()->intended('/');
+
+        } else {
+            session()->flash('danger', '账号密码错误!');
+            return redirect('login');
         }
+
+
     }
 
     public function logout()
