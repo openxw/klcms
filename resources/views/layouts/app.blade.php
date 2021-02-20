@@ -8,8 +8,9 @@
   {{-- CSRF Token  --}}
   <meta name="csrf-token" content="{{ csrf_token() }} ">
 
-  <title>@yield('title', 'KLCMS') - 酷龙内容管理系统 </title>
-  <meta name="description" content="@yield('description', '酷龙内容管理系统')" />
+  <title>@yield('title', 'LaraBBS') - {{ setting('site_name', '酷龙CMS') }}</title>
+  <meta name="description" content="@yield('description', setting('seo_description', '酷龙CMS'))" />
+  <meta name="keywords" content="@yield('keyword', setting('seo_keyword', '酷龙CMS,地产,CIO,开发'))" />
 
   {{-- Style  --}}
   <link rel="stylesheet" href="{{ mix('css/app.css') }}  ">
