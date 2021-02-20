@@ -10,7 +10,6 @@ class ContentRequest extends Request
         {
             // CREATE
             case 'POST':
-            {
             // UPDATE
             case 'PUT':
             case 'PATCH':

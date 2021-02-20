@@ -9,6 +9,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }} ">
 
   <title>@yield('title', 'KLCMS') - 酷龙内容管理系统 </title>
+  <meta name="description" content="@yield('description', '酷龙内容管理系统')" />
 
   {{-- Style  --}}
   <link rel="stylesheet" href="{{ mix('css/app.css') }}  ">
@@ -30,6 +31,8 @@
 
   {{-- Script  --}}
   <script src="{{ mix('js/app.js')}} "></script>
+
+  @yield('scripts')
 </body>
 
 </html>

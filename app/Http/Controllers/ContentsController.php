@@ -42,10 +42,11 @@ class ContentsController extends Controller
 		return redirect()->route('contents.show', $content->id)->with('success', '文章创建成功! ');
 	}
 
-	public function edit(Content $content)
+	public function edit(Content $content )
 	{
         $this->authorize('update', $content);
-		return view('contents.create_and_edit', compact('content'));
+        $categories = Category::all();
+        return view('contents.create_and_edit', compact('content', 'categories'));
 	}
 
 	public function update(ContentRequest $request, Content $content)
@@ -61,6 +62,6 @@ class ContentsController extends Controller
 		$this->authorize('destroy', $content);
 		$content->delete();
 
-		return redirect()->route('contents.index')->with('message', 'Deleted successfully.');
+		return redirect()->route('contents.index')->with('message', '删除成功!');
 	}
 }

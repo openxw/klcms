@@ -25,3 +25,5 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::resource('contents', 'ContentsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
 
 Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
+
+Route::post('upload_image', 'FilesController@upload_image')->name('files.upload_image');

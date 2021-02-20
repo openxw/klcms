@@ -9,12 +9,11 @@ class ContentPolicy extends Policy
 {
     public function update(User $user, Content $content)
     {
-        // return $content->user_id == $user->id;
-        return true;
+        return $user->isAuthorOf($content);
     }
 
     public function destroy(User $user, Content $content)
     {
-        return true;
+        return $user->isAuthorOf($content);
     }
 }
